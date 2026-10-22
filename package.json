@@ -1,0 +1,35 @@
+{
+  "name": "ksl-tender-events",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Append-only tender event journal and daily report section for KSL tenders",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "ksl-tender": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test test/*.test.js",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "5.9.3"
+  }
+}

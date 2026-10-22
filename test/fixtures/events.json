@@ -1,0 +1,128 @@
+[
+  {
+    "id": "ev-01",
+    "at": "2026-10-19T08:00:00Z",
+    "type": "listing",
+    "tenderId": "t-ksl-1",
+    "actor": "buyer:koa",
+    "title": "Tender event journal",
+    "ceilingUsdc": 40
+  },
+  {
+    "id": "ev-02",
+    "at": "2026-10-19T08:30:00Z",
+    "type": "airlock_decision",
+    "tenderId": "t-ksl-1",
+    "actor": "airlock:koa",
+    "decision": "admit",
+    "reason": "scope and budget are clear"
+  },
+  {
+    "id": "ev-03",
+    "at": "2026-10-19T09:00:00Z",
+    "type": "bid",
+    "tenderId": "t-ksl-1",
+    "actor": "agent:garuda",
+    "bidId": "b-1",
+    "agent": "garuda",
+    "priceUsdc": 38,
+    "deliveryDate": "2026-10-24",
+    "approach": "append only journal with a hash chain and a daily report",
+    "settlement": "x402-base"
+  },
+  {
+    "id": "ev-04",
+    "at": "2026-10-19T10:00:00Z",
+    "type": "bid",
+    "tenderId": "t-ksl-1",
+    "actor": "agent:overreach",
+    "bidId": "b-2",
+    "agent": "overreach",
+    "priceUsdc": 44,
+    "deliveryDate": "2026-10-24",
+    "approach": "same scope, higher price",
+    "settlement": "x402-base"
+  },
+  {
+    "id": "ev-05",
+    "at": "2026-10-19T12:00:00Z",
+    "type": "selection",
+    "tenderId": "t-ksl-1",
+    "actor": "buyer:koa",
+    "bidId": "b-1",
+    "rationale": "lower price and a tested plan"
+  },
+  {
+    "id": "ev-06",
+    "at": "2026-10-19T12:30:00Z",
+    "type": "award",
+    "tenderId": "t-ksl-1",
+    "actor": "buyer:koa",
+    "bidId": "b-1",
+    "awardUsdc": 40
+  },
+  {
+    "id": "ev-07",
+    "at": "2026-10-20T08:00:00Z",
+    "type": "delivery",
+    "tenderId": "t-ksl-1",
+    "actor": "agent:garuda",
+    "bidId": "b-1",
+    "artifact": "https://example.test/garuda/ksl-tender-events",
+    "commit": "abc1234"
+  },
+  {
+    "id": "ev-08",
+    "at": "2026-10-20T09:00:00Z",
+    "type": "review",
+    "tenderId": "t-ksl-1",
+    "actor": "reviewer:koa",
+    "bidId": "b-1",
+    "verdict": "accept",
+    "notes": "tests pass and the report matches the spec"
+  },
+  {
+    "id": "ev-09",
+    "at": "2026-10-20T10:00:00Z",
+    "type": "payment",
+    "tenderId": "t-ksl-1",
+    "actor": "treasury:koa",
+    "bidId": "b-1",
+    "amountUsdc": 40,
+    "rail": "x402-base",
+    "txRef": "tx-demo-1"
+  },
+  {
+    "id": "ev-10",
+    "at": "2026-10-20T11:00:00Z",
+    "type": "listing",
+    "tenderId": "t-ksl-2",
+    "actor": "buyer:koa",
+    "title": "Late listing with a skipped airlock",
+    "ceilingUsdc": 20
+  },
+  {
+    "id": "ev-11",
+    "at": "2026-10-20T11:30:00Z",
+    "type": "bid",
+    "tenderId": "t-ksl-2",
+    "actor": "agent:rushed",
+    "bidId": "b-3",
+    "agent": "rushed",
+    "priceUsdc": 15,
+    "deliveryDate": "2026-10-25",
+    "approach": "bid before the airlock decision",
+    "settlement": "x402-solana"
+  },
+  {
+    "id": "ev-12",
+    "at": "2026-10-20T12:00:00Z",
+    "type": "payment",
+    "tenderId": "t-ksl-2",
+    "actor": "treasury:koa",
+    "bidId": "b-3",
+    "amountUsdc": 15,
+    "rail": "x402-solana",
+    "txRef": "tx-demo-2"
+  }
+]
